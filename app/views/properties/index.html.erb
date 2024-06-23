@@ -1,13 +1,26 @@
+<nav class="navbar navbar-inverse">
+  <p>Acra Inmobiliaria</p>
+  <button type="button" class="btn btn-default navbar-btn">Sign in</button>
+</nav>
+
 <p style="color: green"><%= notice %></p>
 
 <h1>Properties</h1>
-
-<div id="properties">
+<div class="row">
   <% @properties.each do |property| %>
-    <%= render property %>
-    <p>
-      <%= link_to "Show this property", property %>
-    </p>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="..." alt="foto de la casa o depa">
+      <div class="caption">
+        <h3></h3>
+        <p>Dirección: <%= property.dirección %></p>
+        <p>Colonia: <%= property.colonia %></p>
+        <p>Precio: <%= number_to_currency(property.precio, unit: "$", separator: ".", delimiter: ",") %></p>
+        <p><%= link_to "Ver propiedad", property_path(property.id, class: "btn btn-primary")%></p>
+        <a href="#" class="btn btn-default" role="button">Reservar Cita</a></p>
+      </div>
+    </div>
+  </div>
   <% end %>
 </div>
 

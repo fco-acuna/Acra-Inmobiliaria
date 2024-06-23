@@ -8,6 +8,7 @@ class PropertiesController < ApplicationController
 
   # GET /properties/1 or /properties/1.json
   def show
+    @property = Property.find(params[:id])
   end
 
   # GET /properties/new
@@ -22,6 +23,8 @@ class PropertiesController < ApplicationController
   # POST /properties or /properties.json
   def create
     @property = Property.new(property_params)
+    @account = Account.find_by(id: property_params[:account_id])
+    @property.account = current_account
 
     respond_to do |format|
       if @property.save
@@ -65,6 +68,6 @@ class PropertiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def property_params
-      params.require(:property).permit(:dirección, :cuartos, :baños, :extras, :precio)
+      params.require(:property).permit(:dirección, :cuartos, :baños, :extras, :precio, :user_id)
     end
 end

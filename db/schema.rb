@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_18_030807) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_19_213149) do
   create_table "accounts", force: :cascade do |t|
     t.string "first_name", default: "", null: false
     t.string "email", default: "", null: false
@@ -43,6 +43,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_18_030807) do
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "colonia"
     t.index ["account_id"], name: "index_properties_on_account_id"
   end
 

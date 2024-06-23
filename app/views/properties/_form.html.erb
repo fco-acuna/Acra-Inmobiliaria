@@ -17,6 +17,11 @@
   </div>
 
   <div>
+    <%= form.label :colonia, style: "display: block" %>
+    <%= form.text_field :colonia %>
+  </div>
+
+  <div>
     <%= form.label :cuartos, style: "display: block" %>
     <%= form.number_field :cuartos %>
   </div>
@@ -35,6 +40,8 @@
     <%= form.label :precio, style: "display: block" %>
     <%= form.number_field :precio %>
   </div>
+    
+ 
 
   <div>
     <%= form.submit %>

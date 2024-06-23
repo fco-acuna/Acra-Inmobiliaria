@@ -1,10 +1,33 @@
-<p style="color: green"><%= notice %></p>
+<header>
+    <h1>Casa de Ejemplo</h1>
+  </header>
 
-<%= render @property %>
+  <main>
+    <section class="gallery">
+      <div class="carousel">
+        <img class="slide" src="images/image1.jpg" alt="Imagen 1">
+        <img class="slide" src="images/image2.jpg" alt="Imagen 2">
+        <img class="slide" src="images/image3.jpg" alt="Imagen 3">
+        <!-- Agrega más imágenes según sea necesario -->
+      </div>
+    </section>
 
-<div>
-  <%= link_to "Edit this property", edit_property_path(@property) %> |
-  <%= link_to "Back to properties", properties_path %>
+    <section class="details">
+      <h2>Amenidades de la Casa</h2>
+      <ul>
+        <li>Dirección: <%= @property.dirección %></li>
+        <li>Colonia: <%= @property.colonia %></li>
+        <li>Cuartos: <%= @property.cuartos %> </li>
+        <li>Baños: <%= @property.baños %></li>
+        <li>Extras: <%= @property.extras %></li>
+        <br>
+        <li>Precio:  <%= number_to_currency(@property.precio, unit: "$", separator: ".", delimiter: ",") %></li>
+        <!-- Agrega más amenidades según sea necesario -->
+      </ul>
+    </section>
+    <div>
+      <%= link_to "Regresar al catálogo", properties_path %>
+    </div>
+  </main>
 
-  <%= button_to "Destroy this property", @property, method: :delete %>
-</div>
+
