@@ -1,12 +1,23 @@
-<nav class="navbar navbar-inverse">
-  <p>Acra Inmobiliaria</p>
-  <button type="button" class="btn btn-default navbar-btn">Sign in</button>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img alt="Acra Inmobiliaria" src="...">
+      </a>
+    </div>
+
+    <div style="text-align: right; margin: 10px;">
+        <%= link_to "Sign In", new_account_session_path, class: "btn btn-primary" %>
+        <%= link_to "Sign Out", destroy_account_session_path, method: :delete, class: "btn btn-danger" %>
+    </div>
+  </div>
 </nav>
 
-<p style="color: green"><%= notice %></p>
-
-<h1>Properties</h1>
-<div class="row">
+<div style="padding: 10px;">
+  <h1>Acra Inmobiliaria: Propiedades disponibles</h1>
+  <%= link_to "Nueva Propiedad", new_property_path, class:"btn btn-info" %>
+</div>
+<div class="row" style="padding: 15px;" >
   <% @properties.each do |property| %>
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
@@ -16,7 +27,7 @@
         <p>Dirección: <%= property.dirección %></p>
         <p>Colonia: <%= property.colonia %></p>
         <p>Precio: <%= number_to_currency(property.precio, unit: "$", separator: ".", delimiter: ",") %></p>
-        <p><%= link_to "Ver propiedad", property_path(property.id, class: "btn btn-primary")%></p>
+        <p><%= link_to "Ver propiedad", property_path(property.id), class: "btn btn-primary"%></p>
         <a href="#" class="btn btn-default" role="button">Reservar Cita</a></p>
       </div>
     </div>
@@ -24,4 +35,4 @@
   <% end %>
 </div>
 
-<%= link_to "New property", new_property_path %>
+

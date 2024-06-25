@@ -1,10 +1,10 @@
 <header>
-    <h1>Casa de Ejemplo</h1>
+    <h1 style="text-align: center;" ><%= @property.dirección %></h1>
   </header>
 
   <main>
     <section class="gallery">
-      <div class="carousel">
+      <div class="carousel" style="text-align: center;">
         <img class="slide" src="images/image1.jpg" alt="Imagen 1">
         <img class="slide" src="images/image2.jpg" alt="Imagen 2">
         <img class="slide" src="images/image3.jpg" alt="Imagen 3">
@@ -12,21 +12,52 @@
       </div>
     </section>
 
-    <section class="details">
-      <h2>Amenidades de la Casa</h2>
-      <ul>
-        <li>Dirección: <%= @property.dirección %></li>
-        <li>Colonia: <%= @property.colonia %></li>
-        <li>Cuartos: <%= @property.cuartos %> </li>
-        <li>Baños: <%= @property.baños %></li>
-        <li>Extras: <%= @property.extras %></li>
-        <br>
-        <li>Precio:  <%= number_to_currency(@property.precio, unit: "$", separator: ".", delimiter: ",") %></li>
-        <!-- Agrega más amenidades según sea necesario -->
-      </ul>
+    <section class="details" style="text-align: center; margin: 10%;">
+      <h2>Más detalles:</h2>
+      <div style="margin: 10px;">
+        <span class="material-symbols-outlined">
+          home_pin
+          </span>
+        Dirección: <%= @property.dirección %> 
+      </div style="margin: 10px;">
+
+      <div style="margin: 10px;">
+        <span class="glyphicon glyphicon-tree-deciduous"></span>
+        Colonia: <%= @property.colonia %> 
+      </div>
+    
+      <div style="margin: 10px;">
+        <span class="material-symbols-outlined">
+          door_front
+          </span>
+        Cuartos: <%= @property.cuartos %> 
+      </div>
+
+      <div style="margin: 10px;">
+        <span class="material-symbols-outlined">
+          wc
+          </span>
+        Baños: <%= @property.baños %> 
+      </div>
+
+      <div style="margin: 10px;">
+        <span class="material-symbols-outlined">
+          format_align_justify
+          </span>
+        Extras: <%= @property.extras %> 
+      </div">
+
+      <div style="margin: 10px;">
+        <span class="glyphicon glyphicon-usd"></span>
+        Precio: <%= number_to_currency(@property.precio, unit: "$", separator: ".", delimiter: ",") %>
+      </div>
+
+      <button class="btn btn-info"> Reservar una cita </button>
+
+
     </section>
-    <div>
-      <%= link_to "Regresar al catálogo", properties_path %>
+    <div style="text-align: end; padding: 15px;" >
+      <%= link_to "Regresar al catálogo", properties_path%>
     </div>
   </main>
 
