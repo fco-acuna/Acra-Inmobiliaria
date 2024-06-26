@@ -11,39 +11,37 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :dirección, style: "display: block" %>
-    <%= form.text_field :dirección %>
+  <form>
+  <div class="form-group">
+    <label for="exampleFormControlInput1"><%= form.label :dirección, style: "display: block" %></label>
+    <%= form.text_field :dirección, class: "form-control", id: "exampleFormControlInput1", placeholder: "Calle y número" %>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1"><%= form.label :colonia, style: "display: block" %></label>
+    <%= form.text_field :colonia, class: "form-control", id: "exampleFormControlInput1", placeholder: "Colonia" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :cuartos, "Cuartos (Número)" %>
+    <%= form.number_field :cuartos, class: "form-control", placeholder: "Ingrese número de cuartos" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :baños, "Baños (Número)" %>
+    <%= form.number_field :baños, class: "form-control", placeholder: "Ingrese número de baños" %>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlInput1"><%= form.label :extras, style: "display: block" %></label>
+    <%= form.text_field :extras, class: "form-control", id: "exampleFormControlInput1", placeholder: "Extras: (Cochera, Terraza, Cuarto de Servicio, etc.)" %>
+  </div>  
+
+   <div class="form-group">
+    <%= form.label :precio, "Precio" %>
+    <%= form.number_field :precio, class: "form-control", placeholder: "Ingresa el precio" %>
   </div>
 
   <div>
-    <%= form.label :colonia, style: "display: block" %>
-    <%= form.text_field :colonia %>
-  </div>
-
-  <div>
-    <%= form.label :cuartos, style: "display: block" %>
-    <%= form.number_field :cuartos %>
-  </div>
-
-  <div>
-    <%= form.label :baños, style: "display: block" %>
-    <%= form.number_field :baños %>
-  </div>
-
-  <div>
-    <%= form.label :extras, style: "display: block" %>
-    <%= form.text_field :extras %>
-  </div>
-
-  <div>
-    <%= form.label :precio, style: "display: block" %>
-    <%= form.number_field :precio %>
-  </div>
-    
- 
-
-  <div>
-    <%= form.submit %>
+    <%= form.button "Agregar nueva propiedad", type: "submit", class: "btn btn-primary" %>
   </div>
 <% end %>

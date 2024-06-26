@@ -17,6 +17,14 @@ gem "puma", ">= 5.0"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
+#gem for photo managing
+gem 'carrierwave', '~> 0.11.2'
+
+gem 'fog', '~> 1.38'
+
+#gem for photo rezising
+gem 'mini_magick', '~> 4.13', '>= 4.13.1'
+
 #gem Styles 
 gem 'sass-rails', '~> 5.0'
 
