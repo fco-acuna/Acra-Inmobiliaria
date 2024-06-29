@@ -40,6 +40,18 @@ gem "jbuilder"
 # User control gem
 gem "devise"
 
+#photo gem
+gem "cloudinary"
+
+#gem media processing
+gem "image_processing", ">= 1.2"
+
+#active storage
+gem 'activestorage'
+
+#postgresql
+gem 'pg'
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 

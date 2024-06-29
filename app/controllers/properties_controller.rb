@@ -26,6 +26,8 @@ class PropertiesController < ApplicationController
     @property = Property.new(property_params)
     @account = Account.find_by(id: property_params[:account_id])
     @property.account = current_account
+    @property.photo = params[:property][:photo]
+
 
     respond_to do |format|
       if @property.save
@@ -69,6 +71,6 @@ class PropertiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def property_params
-      params.require(:property).permit(:dirección, :cuartos, :baños, :extras, :precio, :user_id)
+      params.require(:property).permit(:dirección, :colonia, :cuartos, :baños, :extras, :precio, :user_id, :photo)
     end
 end
